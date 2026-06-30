@@ -1,0 +1,8 @@
+目标：把 GreetingService 的英文问候改成中文问候。
+
+期望行为：
+- 先读取 GreetingService.java
+- 再执行精确替换
+- 最后运行一次编译验证
+
+这个任务用于 demo14 tracing。重点不是让 Agent 真正智能，而是观察一次 Agent 运行如何被 trace/span/event 记录下来。
