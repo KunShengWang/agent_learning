@@ -15,4 +15,7 @@ server:
 # HTTP 日志开关，关闭后就不会打印 LLM 的信息
 demo15:
   http-log:
+    enabled: false
+demo17:
+  http-log:
     enabled: true
