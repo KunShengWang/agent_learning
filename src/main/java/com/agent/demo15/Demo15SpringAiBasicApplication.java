@@ -11,6 +11,7 @@ import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tools.jackson.databind.ObjectMapper;
 
@@ -27,8 +28,13 @@ public class Demo15SpringAiBasicApplication implements ApplicationRunner {
         this.objectMapper = objectMapper;
     }
 
+    /**
+     * Spring Boot 的非 Web 启动方式——启动 Spring 容器但不启动 Tomcat/Netty 等 Web 服务器
+     */
     public static void main(String[] args) {
-        SpringApplication.run(Demo15SpringAiBasicApplication.class, args);
+        SpringApplication application = new SpringApplication(Demo15SpringAiBasicApplication.class);
+        application.setWebApplicationType(WebApplicationType.NONE);// 不启动任何 Web 服务器，只起 Spring 容器
+        application.run(args);
     }
 
     @Override
@@ -55,7 +61,7 @@ public class Demo15SpringAiBasicApplication implements ApplicationRunner {
         }
 
         ChatResponse response = chatModel.call(new Prompt(messages));
-         System.out.println("\n[调试] response = " + objectMapper.writeValueAsString(response));
+        System.out.println("\n[调试] response = " + objectMapper.writeValueAsString(response));
         // System.out.println("\n[调试] response.getResult() = " + objectMapper.writeValueAsString(response.getResult()));
         // System.out.println("\n[调试] response.getResult().getOutput() = " + objectMapper.writeValueAsString(response.getResult().getOutput()));
 

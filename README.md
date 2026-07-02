@@ -52,6 +52,7 @@ agent_learning/
     demo13/     Context Engineering
     demo14/     Tracing
     demo15/     Spring AI 基础模型调用
+    demo16/     Spring AI 流式输出 / Flux / SSE
 
   demo12/       Harness 的测试用例、fixture、运行报告
   demo13/       Context Engineering 的 memory、docs、运行报告
@@ -86,6 +87,7 @@ demo12 / demo13 / demo14        放运行数据、样例工作区、报告
 | demo13 | Context Engineering | 调用 LLM 前决定哪些上下文进入 prompt |
 | demo14 | Tracing | 记录 Agent 执行过程中的 trace、span、event |
 | demo15 | Spring AI Basic | 使用 Spring AI `ChatModel` 替代手写 HTTP 调用模型 |
+| demo16 | Streaming / SSE | 使用 `Flux<String>` 和 `ChatModel.stream()` 学习流式输出 |
 
 ## 学习路线
 
@@ -107,6 +109,7 @@ demo1  LLM 调用
   -> demo13 Context Engineering
   -> demo14 Tracing
   -> demo15 Spring AI 基础模型调用
+  -> demo16 Spring AI 流式输出 / Flux / SSE
 ```
 
 框架阶段采用 A/B/C 学习法：
