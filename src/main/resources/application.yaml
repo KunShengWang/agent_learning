@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: agent_learning
+  ai:
+    model:
+      chat: deepseek # 告诉 Spring AI 用 deepseek 方言
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY:missing}
+      chat:
+        model: deepseek-v4-flash
+        temperature: 0.7
+        max-tokens: 200
+# HTTP 日志开关，关闭后就不会打印 LLM 的信息
+demo15:
+  http-log:
+    enabled: true

@@ -6,6 +6,8 @@
 
 学完这些 demo 后，再看 Spring AI、LangChain4j、OpenAI Agents SDK、LangGraph、AutoGen、CrewAI 等框架时，就能理解它们封装的执行步骤和工程边界。
 
+当前进入第二阶段：通过小 demo 学习 Spring AI / Agent 框架知识点，再回到 `super-agent` 对照真实工程实现，最后二开成简历项目。
+
 ## 适合谁
 
 - 想从 0 理解 Agent 工作原理的人
@@ -49,6 +51,7 @@ agent_learning/
     demo12/     Harness
     demo13/     Context Engineering
     demo14/     Tracing
+    demo15/     Spring AI 基础模型调用
 
   demo12/       Harness 的测试用例、fixture、运行报告
   demo13/       Context Engineering 的 memory、docs、运行报告
@@ -82,6 +85,7 @@ demo12 / demo13 / demo14        放运行数据、样例工作区、报告
 | demo12 | Harness | Agent 的测试台：运行、记录、评估、生成报告 |
 | demo13 | Context Engineering | 调用 LLM 前决定哪些上下文进入 prompt |
 | demo14 | Tracing | 记录 Agent 执行过程中的 trace、span、event |
+| demo15 | Spring AI Basic | 使用 Spring AI `ChatModel` 替代手写 HTTP 调用模型 |
 
 ## 学习路线
 
@@ -102,6 +106,15 @@ demo1  LLM 调用
   -> demo12 Harness
   -> demo13 Context Engineering
   -> demo14 Tracing
+  -> demo15 Spring AI 基础模型调用
+```
+
+框架阶段采用 A/B/C 学习法：
+
+```text
+A. 在 agent_learning 写最小框架 demo
+B. 回到 super-agent 对照真实工程写法
+C. 把能力二开增强到 super-agent，服务简历和面试
 ```
 
 整体理解：
@@ -299,4 +312,3 @@ java -cp $out com.agent.demo14.TracingDemo
 ```
 
 不要只看代码能不能跑，要重点理解每个 demo 背后的 Agent 工程思想。
-
